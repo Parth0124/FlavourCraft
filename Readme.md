@@ -32,7 +32,7 @@ This project is also developed as part of our **DevOps course submission**, ensu
 * **Frontend**: React.js with Progressive Web App (PWA) capabilities in Typescript
 * **Backend**: FastAPI with Python
 * **Database**: MongoDB (with GridFS for image storage)
-* **AI/ML**: TensorFlow\.js or OpenAI/Any good open source model(to be decided upon) API for ingredient detection and recipe generation
+* **AI/ML**: TensorFlow\.js or OpenAI API/Any good open source model(to be decided upon) for ingredient detection and recipe generation
 * **DevOps Tools**: Docker, Docker Compose
 * **MLOps Tools**: MLflow for model tracking, DVC for data version control, Dagshub for managing multimodal AI
 
