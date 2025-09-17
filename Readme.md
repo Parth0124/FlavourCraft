@@ -9,10 +9,10 @@ This project is also developed as part of our **DevOps course submission**, ensu
 
 ## 👥 Team Members
 
-* Aditya Gangwar (22bcs003)
-* Noman Mirza (22bcs071)
-* Parth Abhang (22bcs080)
-* Arya Sali (22bcs106)
+- [Aditya Gangwar](https://github.com/Adityagangwar2674)
+- [Noman Mirza](https://github.com/Nomanbaig7342)
+- [Parth Abhang](https://github.com/Parth0124)
+- [Arya Sali](https://github.com/Arya2422)
 
 ---
 
@@ -29,17 +29,17 @@ This project is also developed as part of our **DevOps course submission**, ensu
 
 ## 🛠️ Tech Stack
 
-* **Frontend**: React.js with Progressive Web App (PWA) capabilities
-* **Backend**: Node.js with Express.js
+* **Frontend**: React.js with Progressive Web App (PWA) capabilities in Typescript
+* **Backend**: FastAPI with Python
 * **Database**: MongoDB (with GridFS for image storage)
-* **AI/ML**: TensorFlow\.js or OpenAI API for ingredient detection and recipe generation
+* **AI/ML**: TensorFlow\.js or OpenAI/Any good open source model(to be decided upon) API for ingredient detection and recipe generation
 * **DevOps Tools**: Docker, Docker Compose
-* **MLOps Tools**: MLflow for model tracking, DVC for data version control
+* **MLOps Tools**: MLflow for model tracking, DVC for data version control, Dagshub for managing multimodal AI
 
 ---
 
-## 📂 Project Structure (Conceptual)
-
+## 📂 Project Structure (Conceptual - to be decided upon depending on the backend functionalities.)
+The given project structure is just conceptual and is subjected to change based upon any further discussions among the team members
 * **Frontend**: User-facing React.js application with PWA features for seamless access.
 * **Backend**: Express.js server handling requests, AI/ML model inference, and database interactions.
 * **Database**: MongoDB storing user data, recipes, and images (via GridFS).
@@ -62,5 +62,6 @@ This project is also developed as part of our **DevOps course submission**, ensu
 * Integration with external recipe APIs for broader recipe suggestions.
 * Personalized recipe recommendations based on dietary preferences, allergies, and user history.
 * A mobile-native version of the application for enhanced accessibility.
+* Voice based recepie generator and agent
 
 ---
