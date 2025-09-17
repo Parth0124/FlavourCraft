@@ -1,8 +1,5 @@
-Got it 👍 Here’s a **purely theoretical version** of the README without any code snippets:
 
----
-
-# 🍳 AI Recipe Generator
+# 🍳 FlavourCraft:AI Recipe Generator
 
 The **AI Recipe Generator** is a web-based application that uses artificial intelligence to identify ingredients from user-provided images and recommend suitable recipe options accordingly. It personalizes and automates the cooking experience, enabling users to get curated recipes based on what they already have in their kitchen.
 
