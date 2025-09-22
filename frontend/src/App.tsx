@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Info from "./components/Info";
@@ -25,7 +30,10 @@ const Layout = () => {
         />
 
         {/* Ingredient Upload Page */}
-        <Route path="/upload" element={<IngredientUploadPage onNavigate={() => {}} />} />
+        <Route
+          path="/upload"
+          element={<IngredientUploadPage onNavigate={() => {}} />}
+        />
       </Routes>
 
       {/* Hide footer only on /upload */}

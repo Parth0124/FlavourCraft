@@ -11,7 +11,7 @@ const RecipeGenerator: React.FC<RecipeGeneratorProps> = ({ ingredientCount }) =>
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsGenerating(false);
-    }, 4000); // 4 seconds
+    }, 5000); // 5 seconds
 
     return () => clearTimeout(timer);
   }, []);
