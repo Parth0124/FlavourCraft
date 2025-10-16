@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import RecipeGenerator from "@/components/Generator";
 import IngredientGrid from "@/components/IngridientsGrid";
 import { Camera, ChefHat, FileImage, Plus, Upload, X } from "lucide-react";
@@ -285,6 +286,7 @@ const IngredientUploadPage: React.FC<IngredientUploadPageProps> = ({
           )}
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };
