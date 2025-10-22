@@ -3,7 +3,7 @@ import { ChefHat, BookOpen, Star, Clock } from "lucide-react";
 
 const Hero = () => {
   return (
-    <div className="relative pt-20 bg-gradient-to-br from-orange-50 via-amber-50 to-red-50 overflow-hidden">
+    <div className="relative pt-20 bg-gradient-to-b from-orange-50 to-white overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-20 h-20 bg-orange-300 rounded-full blur-xl"></div>
