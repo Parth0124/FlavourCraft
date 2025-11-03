@@ -1,7 +1,8 @@
-
 import { ChefHat, BookOpen, Star, Clock } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <div className="relative pt-20 bg-gradient-to-br from-orange-50 via-amber-50 to-red-50 overflow-hidden">
       {/* Background Pattern */}
@@ -24,7 +25,8 @@ const Hero = () => {
                 <span className="text-gray-800">with AI Magic</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed max-w-lg">
-                Transform your ingredients into delicious recipes instantly. Our AI chef creates personalized meals just for you.
+                Transform your ingredients into delicious recipes instantly. Our
+                AI chef creates personalized meals just for you.
               </p>
             </div>
 
@@ -46,11 +48,14 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-xl font-semibold hover:from-orange-600 hover:to-red-600 transform hover:scale-105 transition-all duration-200 shadow-xl flex items-center justify-center space-x-2">
+              <button
+                onClick={() => navigate("/upload")}
+                className="bg-gradient-to-r hover:cursor-pointer from-orange-500 to-red-500 text-white px-8 py-4 rounded-xl font-semibold hover:from-orange-600 hover:to-red-600 transform hover:scale-105 transition-all duration-200 shadow-xl flex items-center justify-center space-x-2"
+              >
                 <ChefHat className="w-5 h-5" />
                 <span>Start Cooking Now</span>
               </button>
-              <button className="border-2 border-orange-300 text-orange-600 px-8 py-4 rounded-xl font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center space-x-2">
+              <button className="border-2 hover:cursor-pointer border-orange-300 text-orange-600 px-8 py-4 rounded-xl font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center space-x-2">
                 <BookOpen className="w-5 h-5" />
                 <span>Browse Recipes</span>
               </button>
@@ -67,7 +72,7 @@ const Hero = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
             </div>
-            
+
             {/* Floating Recipe Cards */}
             <div className="absolute -top-4 -left-4 bg-white rounded-2xl p-4 shadow-xl transform -rotate-12 hover:rotate-0 transition-transform duration-300">
               <div className="flex items-center space-x-2">
@@ -76,7 +81,7 @@ const Hero = () => {
               </div>
               <div className="text-xs text-gray-500 mt-1">Pasta Carbonara</div>
             </div>
-            
+
             <div className="absolute -bottom-4 -right-4 bg-white rounded-2xl p-4 shadow-xl transform rotate-12 hover:rotate-0 transition-transform duration-300">
               <div className="flex items-center space-x-2">
                 <Clock className="w-4 h-4 text-green-400" />

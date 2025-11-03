@@ -3,7 +3,6 @@ import IngredientGrid from "@/components/IngridientsGrid";
 import { Camera, ChefHat, FileImage, Plus, Upload, X } from "lucide-react";
 import { useState } from "react";
 
-
 // Define types
 interface IngredientUploadPageProps {
   onNavigate: (page: string) => void;
@@ -106,7 +105,7 @@ const IngredientUploadPage: React.FC<IngredientUploadPageProps> = ({
           <div className="text-center mb-8">
             <button
               onClick={resetToUpload}
-              className="inline-flex items-center text-orange-600 hover:text-orange-700 mb-6 transition-colors"
+              className="hover:cursor-pointer inline-flex items-center text-orange-600 hover:text-orange-700 mb-6 transition-colors"
             >
               ← Back to Upload
             </button>
@@ -222,7 +221,7 @@ const IngredientUploadPage: React.FC<IngredientUploadPageProps> = ({
               </h3>
               <button
                 onClick={addMoreImages}
-                className="inline-flex items-center px-4 py-2 bg-white border-2 border-orange-300 text-orange-600 rounded-xl hover:bg-orange-50 transition-all duration-200"
+                className="hover:cursor-pointer inline-flex items-center px-4 py-2 bg-white border-2 border-orange-300 text-orange-600 rounded-xl hover:bg-orange-50 transition-all duration-200"
               >
                 <Plus className="w-4 h-4 mr-2" />
                 Add More
@@ -244,7 +243,7 @@ const IngredientUploadPage: React.FC<IngredientUploadPageProps> = ({
 
                   <button
                     onClick={() => removeImage(image.id)}
-                    className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 hover:bg-red-600 transition-all duration-200"
+                    className="hover:cursor-pointer absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 hover:bg-red-600 transition-all duration-200"
                   >
                     <X className="w-4 h-4" />
                   </button>
@@ -265,17 +264,17 @@ const IngredientUploadPage: React.FC<IngredientUploadPageProps> = ({
             disabled={uploadedImages.length === 0}
             className={`inline-flex items-center px-8 py-4 rounded-xl font-bold text-lg transition-all duration-200 ${
               uploadedImages.length > 0
-                ? "bg-gradient-to-r from-orange-300 to-red-900 text-white hover:from-orange-600 hover:to-red-600 transform hover:scale-105 shadow-lg"
+                ? "hover:cursor-pointer bg-gradient-to-r from-orange-300 to-red-900 text-white hover:from-orange-600 hover:to-red-600 transform hover:scale-105 shadow-lg"
                 : "bg-gray-300 text-gray-500 cursor-not-allowed"
             }`}
           >
             <ChefHat className="w-6 h-6 mr-3" />
             Generate My Recipe
-            {uploadedImages.length > 0 && (
+            {/* {uploadedImages.length > 0 && (
               <span className="ml-2 bg-white bg-opacity-20 px-2 py-1 rounded-full text-sm">
                 {uploadedImages.length}
               </span>
-            )}
+            )} */}
           </button>
 
           {uploadedImages.length === 0 && (

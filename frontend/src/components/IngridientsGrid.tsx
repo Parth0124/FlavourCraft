@@ -35,7 +35,7 @@ const IngredientGrid: React.FC<IngredientGridProps> = ({
     if (isVisible && uploadedImages.length > 0) {
       uploadedImages.forEach((image, index) => {
         setTimeout(() => {
-          setAnimatedItems(prev => new Set([...prev, image.id]));
+          setAnimatedItems((prev) => new Set([...prev, image.id]));
         }, index * 150); // Stagger animation by 150ms
       });
     }
@@ -43,10 +43,12 @@ const IngredientGrid: React.FC<IngredientGridProps> = ({
 
   // Add new items with animation
   useEffect(() => {
-    const newItems = uploadedImages.filter(image => !animatedItems.has(image.id));
+    const newItems = uploadedImages.filter(
+      (image) => !animatedItems.has(image.id)
+    );
     newItems.forEach((image, index) => {
       setTimeout(() => {
-        setAnimatedItems(prev => new Set([...prev, image.id]));
+        setAnimatedItems((prev) => new Set([...prev, image.id]));
       }, index * 150);
     });
   }, [uploadedImages, animatedItems]);
@@ -54,11 +56,9 @@ const IngredientGrid: React.FC<IngredientGridProps> = ({
   return (
     <div className="h-full">
       {/* Header with slide-in animation */}
-      <div 
+      <div
         className={`flex items-center justify-between mb-6 transform transition-all duration-700 ease-out ${
-          isVisible 
-            ? 'translate-y-0 opacity-100' 
-            : '-translate-y-4 opacity-0'
+          isVisible ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
         }`}
       >
         <h3 className="text-2xl font-bold text-gray-800">
@@ -66,7 +66,7 @@ const IngredientGrid: React.FC<IngredientGridProps> = ({
         </h3>
         <button
           onClick={onAddMore}
-          className="inline-flex items-center px-4 py-2 bg-white border-2 border-orange-300 text-orange-600 rounded-xl hover:bg-orange-50 transition-all duration-200 hover:scale-105 hover:shadow-md"
+          className="hover:cursor-pointer inline-flex items-center px-4 py-2 bg-white border-2 border-orange-300 text-orange-600 rounded-xl hover:bg-orange-50 transition-all duration-200 hover:scale-105 hover:shadow-md"
         >
           <Plus className="w-4 h-4 mr-2" />
           Add More
@@ -74,26 +74,24 @@ const IngredientGrid: React.FC<IngredientGridProps> = ({
       </div>
 
       {/* Grid with staggered animations */}
-      <div 
+      <div
         className={`grid grid-cols-2 lg:grid-cols-3 gap-4 max-h-[70vh] overflow-y-auto pr-2 transform transition-all duration-500 ease-out ${
-          isVisible 
-            ? 'translate-y-0 opacity-100' 
-            : 'translate-y-8 opacity-0'
+          isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
         }`}
       >
         {uploadedImages.map((image, index) => {
           const isAnimated = animatedItems.has(image.id);
-          
+
           return (
-            <div 
-              key={image.id} 
+            <div
+              key={image.id}
               className={`relative group transform transition-all duration-500 ease-out ${
-                isAnimated 
-                  ? 'translate-y-0 opacity-100 scale-100' 
-                  : 'translate-y-6 opacity-0 scale-95'
+                isAnimated
+                  ? "translate-y-0 opacity-100 scale-100"
+                  : "translate-y-6 opacity-0 scale-95"
               }`}
               style={{
-                transitionDelay: isAnimated ? '0ms' : `${index * 100}ms`
+                transitionDelay: isAnimated ? "0ms" : `${index * 100}ms`,
               }}
             >
               <div className="aspect-square bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 relative group hover:scale-105 hover:-translate-y-1">
@@ -119,11 +117,13 @@ const IngredientGrid: React.FC<IngredientGridProps> = ({
               </button>
 
               {/* Filename with slide-up animation */}
-              <p className={`mt-2 text-sm text-gray-600 truncate text-center transform transition-all duration-300 ${
-                isAnimated 
-                  ? 'translate-y-0 opacity-100' 
-                  : 'translate-y-2 opacity-0'
-              }`}>
+              <p
+                className={`mt-2 text-sm text-gray-600 truncate text-center transform transition-all duration-300 ${
+                  isAnimated
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-2 opacity-0"
+                }`}
+              >
                 {image.name}
               </p>
 
@@ -138,11 +138,11 @@ const IngredientGrid: React.FC<IngredientGridProps> = ({
 
       {/* Empty state with bounce animation */}
       {uploadedImages.length === 0 && (
-        <div 
+        <div
           className={`flex flex-col items-center justify-center h-64 text-gray-500 transform transition-all duration-700 ease-out ${
-            isVisible 
-              ? 'translate-y-0 opacity-100 scale-100' 
-              : 'translate-y-8 opacity-0 scale-95'
+            isVisible
+              ? "translate-y-0 opacity-100 scale-100"
+              : "translate-y-8 opacity-0 scale-95"
           }`}
         >
           <div className="animate-bounce mb-4">
@@ -157,16 +157,14 @@ const IngredientGrid: React.FC<IngredientGridProps> = ({
 
       {/* Floating action hint */}
       {uploadedImages.length > 0 && (
-        <div 
+        <div
           className={`absolute bottom-4 right-4 transform transition-all duration-1000 ease-out ${
-            isVisible 
-              ? 'translate-y-0 opacity-100' 
-              : 'translate-y-4 opacity-0'
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
           }`}
         >
-          <div className="bg-gradient-to-r from-orange-400 to-red-500 text-white px-3 py-2 rounded-full text-xs font-medium shadow-lg animate-pulse">
+          {/* <div className="bg-gradient-to-r from-orange-400 to-red-500 text-white px-3 py-2 rounded-full text-xs font-medium shadow-lg animate-pulse">
             {uploadedImages.length} ready to cook!
-          </div>
+          </div> */}
         </div>
       )}
     </div>
